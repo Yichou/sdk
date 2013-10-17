@@ -1,8 +1,7 @@
 package com.yichou.common.sdk;
 
-import java.util.Map;
+import java.util.HashMap;
 
-import android.app.Activity;
 import android.content.Context;
 
 
@@ -101,14 +100,53 @@ public interface ISdk {
 	 * @param data
 	 */
 	public void sendEvent(Context context, String id, String data);
+	public void sendEvent(Context context, String id);
 
 	/**
 	 * 发送多个事件
 	 * 
 	 * @param context
-	 * @param events
+	 * @param map 为当前事件的属性和取值（键值对）。
 	 */
-	public void sendEvent(Context context, Map<String, String> events);
+	public void sendEvent(Context context, String id, HashMap<String, String> map);
+	
+	/**
+	 * 事件开始
+	 * 
+	 * @param context
+	 * @param id
+	 */
+	public void beginEvnet(Context context, String id);
+	public void beginEvnet(Context context, String id, String data);
+	
+	/**
+	 * 事件结束
+	 * 
+	 * @param context
+	 * @param id
+	 */
+	public void endEvnet(Context context, String id);
+	public void endEvnet(Context context, String id, String data);
+
+	/**
+	 * 带参数事件开始
+	 * 
+	 * @param context
+	 * @param id
+	 * @param map 为当前事件的属性和取值（键值对）。
+	 * @param flag 这个参数用于和 id 一起标示一个唯一事件，并不会被统计；
+	 */
+	public void beginEvnetEx(Context context, String id, String flag, HashMap<String,String> map);
+	
+	/**
+	 * 带参数的事件结束
+	 * 
+	 * @param context
+	 * @param id
+	 * @param flag
+	 */
+	public void endEvnetEx(Context context, String id, String flag);
+	
 	
 	/**
 	 * 进入某场景
