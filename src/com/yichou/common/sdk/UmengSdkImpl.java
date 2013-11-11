@@ -127,9 +127,8 @@ public class UmengSdkImpl implements ISdk, UmengUpdateListener,
 	}
 
 	@Override
-	public void setCatchException(Context context, boolean enable) {
-		if(enable)
-			MobclickAgent.onError(context);
+	public void enableCrashHandle(Context context) {
+		MobclickAgent.onError(context);
 	}
 
 	@Override

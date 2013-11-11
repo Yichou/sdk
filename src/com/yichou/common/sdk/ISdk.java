@@ -170,7 +170,7 @@ public interface ISdk {
 	 * @param context
 	 * @param enable 是否开启
 	 */
-	public void setCatchException(Context context, boolean enable);
+	public void enableCrashHandle(Context context);
 	
 	///////////// 框架事件 ////////////////////////////
 	public void onCreate(Context context);
